@@ -1,0 +1,19 @@
+name: Test JavaScript
+
+on: push
+
+jobs:
+  run_test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: javascript
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install module
+        run: yarn
+
+      - name: run tests
+        run: yarn test
+
