@@ -6,6 +6,10 @@ on:
       - .github/workflows/test-javascript.yml
       - javascript/**
 
+defaults:
+  run:
+    working-directory: javascript
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -14,11 +18,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: |
-          cd javascript
-          yarn install
+        run: yarn install
 
       - name: Test
-        run: |
-          cd javascript
-          yarn test
+        run: yarn test
