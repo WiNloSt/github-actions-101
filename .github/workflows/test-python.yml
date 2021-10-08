@@ -1,0 +1,16 @@
+name: Test Python
+
+on: push
+
+jobs:
+  run_test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: python
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: run tests
+        run: python -m unittest
+
