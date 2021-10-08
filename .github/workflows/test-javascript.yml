@@ -5,6 +5,10 @@ on:
     paths:
       - .github/workflows/test-javascript.yml
       - javascript/**
+  pull_request:
+    paths:
+      - .github/workflows/test-javascript.yml
+      - javascript/**
 
 jobs:
   test:
