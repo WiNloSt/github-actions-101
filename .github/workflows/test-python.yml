@@ -1,6 +1,10 @@
 name: Test Python
 
-on: push
+on:
+  push:
+    paths:
+      - .github/workflows/test-python.yml
+      - python/**
 
 jobs:
   test:
@@ -13,3 +17,4 @@ jobs:
         run: |
           cd python
           python -m unittest
+
