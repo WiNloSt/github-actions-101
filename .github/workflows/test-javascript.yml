@@ -17,6 +17,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            javascript/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('javascript/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
       - name: Install dependencies
         run: yarn install
 
